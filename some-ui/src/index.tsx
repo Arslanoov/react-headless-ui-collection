@@ -1,3 +1,1 @@
-import { SomeComponent } from './components/SomeComponent';
-
-export { SomeComponent };
+export * as Breadcrumb from './components/Breadcrumb/Breadcrumb';
