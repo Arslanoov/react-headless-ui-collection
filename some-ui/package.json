@@ -65,6 +65,7 @@
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.31.2",
     "sass": "^1.51.0",
+    "storybook-addon-sass-postcss": "^0.1.1",
     "ts-jest": "^24.0.2",
     "typescript": "^4.6.3"
   }
