@@ -51,6 +51,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.5.11",
     "jest": "^24.8.0",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
     "prop-types": "^15.7.2",
