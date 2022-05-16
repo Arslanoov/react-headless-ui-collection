@@ -1,0 +1,43 @@
+.someui-select {
+  &__items {
+    display: flex;
+    flex-direction: column;
+
+    opacity: 1;
+
+    transition: opacity .5s;
+
+    &_hidden {
+      opacity: 0;
+      
+      .someui-select__item {
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &__item,
+  &__preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__item {
+    width: 150px;
+    height: 35px;
+  }
+
+  &__preview {
+    width: 150px;
+    height: 35px;
+  }
+}

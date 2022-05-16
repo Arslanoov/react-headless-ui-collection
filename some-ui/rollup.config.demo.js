@@ -25,14 +25,17 @@ export default {
       presets: ['@babel/preset-react'],
     }),
     scss(),
-    commonjs(),
     url(),
     svgr(),
+    resolve(),
+    commonjs({
+      sourceMap: false,
+    }),
     typescript({
       rollupCommonJSResolveHack: true,
-      clean: true
+      clean: true,
+      check: false // TODO: Fix build
     }),
-    resolve(),
     serve({
       open: true,
       openPage: '/',

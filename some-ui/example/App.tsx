@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Breadcrumb from '../src/components/Breadcrumb';
 import Rating from '../src/components/Rating';
+import Select from '../src/components/Select';
 
 import './example.scss';
 
@@ -31,6 +32,24 @@ const App = () => {
         withHalf={true}
         customIcon={() => <div>icon</div>}
       />
+
+      <h2>Select</h2>
+      <Select
+        onChange={() => {}}
+        defaultValue="Option2"
+        disabled={false}
+        placeholder="placeholder"
+      >
+        <Select.Option value="Option1" disabled>
+          Option1
+        </Select.Option>
+        <Select.Option value="Option2" disabled>
+          Option2
+        </Select.Option>
+        <Select.Option value="Option3" disabled>
+          Option3
+        </Select.Option>
+      </Select>
     </div>
   );
 };

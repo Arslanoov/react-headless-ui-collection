@@ -28,7 +28,7 @@ type BreadcrumbProps = {
 };
 
 type BreadcrumbComposition = {
-  Item: typeof BreadcrumbItem;
+  Item: typeof BreadcrumbItem
 };
 
 const Breadcrumb: React.FC<BreadcrumbProps> & BreadcrumbComposition = ({
