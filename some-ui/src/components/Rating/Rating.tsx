@@ -7,12 +7,12 @@ const RATING_PREFIX = `${PREFIX}-rate`;
 const CustomRatingIcon = () => <div>Star</div>;
 
 type RatingProps = {
-  defaultValue?: number,
-  onChange?: (index: number) => void,
-  readOnly?: boolean,
-  withHalf?: boolean,
-  customIcon?: (index: number) => React.ReactElement,
-  className?: string
+  defaultValue?: number;
+  onChange?: (index: number) => void;
+  readOnly?: boolean;
+  withHalf?: boolean;
+  customIcon?: (index: number) => React.ReactElement;
+  className?: string;
 };
 
 // TODO: Implement with half
@@ -22,7 +22,7 @@ const Rating: React.FC<RatingProps> = ({
   onChange = () => {},
   readOnly = false,
   customIcon = () => <CustomRatingIcon />,
-  className = ''
+  className = '',
 }) => {
   const [value, setValue] = useState(defaultValue);
 

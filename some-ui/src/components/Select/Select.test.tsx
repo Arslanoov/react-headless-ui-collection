@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import Select from "./Select";
+import Select from './Select';
 
 describe('Select component', function () {
   it('should render items', () => {
@@ -93,7 +93,9 @@ describe('Select component', function () {
     const { container } = render(
       <Select onChange={onSelectSpy} defaultValue="2">
         <Select.Option value="1">1</Select.Option>
-        <Select.Option value="2" disabled>2</Select.Option>
+        <Select.Option value="2" disabled>
+          2
+        </Select.Option>
         <Select.Option value="3">3</Select.Option>
       </Select>
     );

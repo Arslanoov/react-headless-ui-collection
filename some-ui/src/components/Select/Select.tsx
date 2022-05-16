@@ -2,25 +2,20 @@ import React, { useState, useContext } from 'react';
 
 import type { OnChangeHandler } from './Select.context';
 
-import SelectContext from "./Select.context";
+import SelectContext from './Select.context';
 
-import { PREFIX } from "../../const/prefix";
+import { PREFIX } from '../../const/prefix';
 
 const SELECT_PREFIX = `${PREFIX}-select`;
 
 type OptionProps = {
-  value: string | null,
-  children: React.ReactElement | React.ReactElement[] | string,
-  className?: string,
-  disabled?: boolean
+  value: string | null;
+  children: React.ReactElement | React.ReactElement[] | string;
+  className?: string;
+  disabled?: boolean;
 };
 
-const Option: React.FC<OptionProps> = ({
-  children,
-  value = null,
-  className = '',
-  disabled = false
-}) => {
+const Option: React.FC<OptionProps> = ({ children, value = null, className = '', disabled = false }) => {
   const onChange = useContext(SelectContext);
 
   return (
@@ -38,16 +33,16 @@ const Option: React.FC<OptionProps> = ({
 };
 
 type SelectProps = {
-  onChange?: OnChangeHandler,
-  defaultValue?: string | null,
-  placeholder?: string | null,
-  className?: string,
-  disabled?: boolean,
-  children: React.ReactElement[] | React.ReactElement
+  onChange?: OnChangeHandler;
+  defaultValue?: string | null;
+  placeholder?: string | null;
+  className?: string;
+  disabled?: boolean;
+  children: React.ReactElement[] | React.ReactElement;
 };
 
 type SelectComposition = {
-  Option: typeof Option
+  Option: typeof Option;
 };
 
 const Select: React.FC<SelectProps> & SelectComposition = ({
@@ -56,7 +51,7 @@ const Select: React.FC<SelectProps> & SelectComposition = ({
   placeholder = null,
   defaultValue = null,
   className = '',
-  children
+  children,
 }) => {
   const [selectedValue, setSelectedValue] = useState<string | null>(defaultValue);
   const [isOpenedSelect, setIsOpenedSelect] = useState<boolean>(false);
@@ -67,7 +62,7 @@ const Select: React.FC<SelectProps> & SelectComposition = ({
       onChange(value);
       toggleSelect();
     }
-  }
+  };
 
   const toggleSelect = () => setIsOpenedSelect((isSelected) => !isSelected);
 
