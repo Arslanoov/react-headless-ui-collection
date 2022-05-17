@@ -3,6 +3,7 @@ import * as React from 'react';
 import Breadcrumb from '../src/components/Breadcrumb';
 import Rating from '../src/components/Rating';
 import Select from '../src/components/Select';
+import Carousel from '../src/components/Carousel';
 
 import './example.scss';
 
@@ -34,12 +35,7 @@ const App = () => {
       />
 
       <h2>Select</h2>
-      <Select
-        onChange={() => {}}
-        defaultValue="Option2"
-        disabled={false}
-        placeholder="placeholder"
-      >
+      <Select onChange={() => {}} defaultValue="Option2" disabled={false} placeholder="placeholder">
         <Select.Option value="Option1" disabled>
           Option1
         </Select.Option>
@@ -50,6 +46,13 @@ const App = () => {
           Option3
         </Select.Option>
       </Select>
+
+      <h2>Carousel</h2>
+      <Carousel width={500} height={150} autoplay>
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+      </Carousel>
     </div>
   );
 };
