@@ -4,6 +4,7 @@ import Breadcrumb from '../src/components/Breadcrumb';
 import Rating from '../src/components/Rating';
 import Select from '../src/components/Select';
 import Carousel from '../src/components/Carousel';
+import Collapse from '../src/components/Collapse';
 
 import './example.scss';
 
@@ -53,6 +54,22 @@ const App = () => {
         <div>Second</div>
         <div>Third</div>
       </Carousel>
+
+      <h2>Collapse</h2>
+      <Collapse defaultActiveIndex={[1, 3]}>
+        <Collapse.Panel key="1" header="Some header 1">
+          Some content 1
+        </Collapse.Panel>
+        <Collapse.Panel key="2" header="Some header 2">
+          Some content 2
+        </Collapse.Panel>
+        <Collapse.Panel key="3" header="Some header 3" disabled>
+          Some content 3
+        </Collapse.Panel>
+        <Collapse.Panel key="4" header="Some header 4" disabled>
+          Some content 3
+        </Collapse.Panel>
+      </Collapse>
     </div>
   );
 };
