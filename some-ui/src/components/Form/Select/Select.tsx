@@ -4,7 +4,7 @@ import type { OnChangeHandler } from './Select.context';
 
 import SelectContext from './Select.context';
 
-import { PREFIX } from '../../const/prefix';
+import { PREFIX } from '../../../const/prefix';
 
 const SELECT_PREFIX = `${PREFIX}-select`;
 
