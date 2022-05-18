@@ -1,0 +1,12 @@
+.someui {
+    &-bc {
+        &__items {
+            display: flex;
+            align-items: center;
+        }
+
+        &__separator {
+            margin: 0 10px;
+        }
+    }
+}
