@@ -2,9 +2,10 @@ import * as React from 'react';
 
 import Breadcrumb from '../src/components/Breadcrumb';
 import Rating from '../src/components/Rating';
-import Select from '../src/components/Select';
 import Carousel from '../src/components/Carousel';
 import Collapse from '../src/components/Collapse';
+import Select from '../src/components/Form/Select';
+import Input from '../src/components/Form/Input';
 
 import './example.scss';
 
@@ -35,19 +36,6 @@ const App = () => {
         customIcon={() => <div>icon</div>}
       />
 
-      <h2>Select</h2>
-      <Select onChange={() => {}} defaultValue="Option2" disabled={false} placeholder="placeholder">
-        <Select.Option value="Option1" disabled>
-          Option1
-        </Select.Option>
-        <Select.Option value="Option2" disabled>
-          Option2
-        </Select.Option>
-        <Select.Option value="Option3" disabled>
-          Option3
-        </Select.Option>
-      </Select>
-
       <h2>Carousel</h2>
       <Carousel width={500} height={150} autoplay>
         <div>First</div>
@@ -70,6 +58,32 @@ const App = () => {
           Some content 3
         </Collapse.Panel>
       </Collapse>
+
+      <h2>Form</h2>
+      <h3>Select</h3>
+      <Select onChange={() => {}} defaultValue="Option2" disabled={false} placeholder="placeholder">
+        <Select.Option value="Option1" disabled>
+          Option1
+        </Select.Option>
+        <Select.Option value="Option2" disabled>
+          Option2
+        </Select.Option>
+        <Select.Option value="Option3" disabled>
+          Option3
+        </Select.Option>
+      </Select>
+
+      <h3>Input</h3>
+      <Input
+        type="text"
+        name="value"
+        value="somevalue"
+        label="Test label"
+        onChange={() => {}}
+        onError={() => {}}
+        readonly={false}
+        rules={[(v, name) => !!v && `${name} is required`]}
+      />
     </div>
   );
 };
