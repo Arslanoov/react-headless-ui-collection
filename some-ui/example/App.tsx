@@ -6,6 +6,7 @@ import Carousel from '../src/components/Carousel';
 import Collapse from '../src/components/Collapse';
 import Select from '../src/components/Form/Select';
 import Input from '../src/components/Form/Input';
+import BackTop from '../src/components/BackTop';
 
 import './example.scss';
 
@@ -84,6 +85,8 @@ const App = () => {
         readonly={false}
         rules={[(v, name) => !!v && `${name} is required`]}
       />
+
+      <BackTop>To the top</BackTop>
     </div>
   );
 };
