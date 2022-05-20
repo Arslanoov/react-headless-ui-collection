@@ -1,0 +1,35 @@
+.someui-cb {
+  &__label {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid #000;
+    border-radius: 5px;
+    
+    &:not(&_disabled) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+    &_checked {
+      &::after {
+        content: "✔";
+      }
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+}
