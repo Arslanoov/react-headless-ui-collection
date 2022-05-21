@@ -7,12 +7,14 @@ import Collapse from '../src/components/Collapse';
 import Select from '../src/components/Form/Select';
 import Input from '../src/components/Form/Input';
 import Checkbox from '../src/components/Form/Checkbox';
+import Radio from '../src/components/Form/Radio';
 import BackTop from '../src/components/BackTop';
 
 import './example.scss';
 
 const App = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
+  const [radioValue, setRadioValue] = React.useState<number>(1);
 
   return (
     <div>
@@ -89,10 +91,19 @@ const App = () => {
         rules={[(v, name) => !!v && `${name} is required`]}
       />
 
-      <BackTop>To the top</BackTop>
-
       <h3>Checkbox</h3>
       <Checkbox onChange={setIsChecked} checked={isChecked} name="some" />
+
+      <h3>Radio</h3>
+      <Radio name="test" value={radioValue} onChange={setRadioValue}>
+        <Radio.Item value={1}>Label 1</Radio.Item>
+        <Radio.Item value={2}>Label 2</Radio.Item>
+        <Radio.Item value={3} disabled>
+          Label 3
+        </Radio.Item>
+      </Radio>
+
+      <BackTop>To the top</BackTop>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 
 import Select from './Select';
 
-describe('Select component', function () {
+describe('Select component', () => {
   it('should render items', () => {
     const { container } = render(
       <Select>
