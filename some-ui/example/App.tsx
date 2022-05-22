@@ -8,6 +8,7 @@ import Select from '../src/components/Form/Select';
 import Input from '../src/components/Form/Input';
 import Checkbox from '../src/components/Form/Checkbox';
 import Radio from '../src/components/Form/Radio';
+import Upload from '../src/components/Form/Upload';
 import BackTop from '../src/components/BackTop';
 
 import './example.scss';
@@ -102,6 +103,9 @@ const App = () => {
           Label 3
         </Radio.Item>
       </Radio>
+
+      <h3>Upload</h3>
+      <Upload onUpload={console.log} onError={console.log} />
 
       <BackTop>To the top</BackTop>
     </div>
