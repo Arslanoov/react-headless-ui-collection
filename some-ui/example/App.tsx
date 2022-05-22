@@ -6,10 +6,47 @@ import Carousel from '../src/components/Carousel';
 import Collapse from '../src/components/Collapse';
 import Select from '../src/components/Form/Select';
 import Input from '../src/components/Form/Input';
+import Checkbox from '../src/components/Form/Checkbox';
+import Radio from '../src/components/Form/Radio';
+import Upload from '../src/components/Form/Upload';
+import Modal from '../src/components/Modal';
+import { Row, Col } from '../src/components/Grid';
+import Table from '../src/components/Table';
+import BackTop from '../src/components/BackTop';
 
 import './example.scss';
 
+const dataSource = [
+  {
+    key: '1',
+    name: 'John',
+    age: 20,
+  },
+  {
+    key: '2',
+    name: 'Alice',
+    age: 25,
+  },
+];
+
+const columns = [
+  {
+    title: 'Name',
+    index: 'name',
+    key: 'name',
+  },
+  {
+    title: 'Age',
+    index: 'age',
+    key: 'age',
+  },
+];
+
 const App = () => {
+  const [isChecked, setIsChecked] = React.useState<boolean>(false);
+  const [isVisible, setIsVisible] = React.useState<boolean>(false);
+  const [radioValue, setRadioValue] = React.useState<number>(1);
+
   return (
     <div>
       <h1>Components</h1>
@@ -84,6 +121,56 @@ const App = () => {
         readonly={false}
         rules={[(v, name) => !!v && `${name} is required`]}
       />
+
+      <h3>Checkbox</h3>
+      <Checkbox onChange={setIsChecked} checked={isChecked} name="some" />
+
+      <h3>Radio</h3>
+      <Radio name="test" value={radioValue} onChange={setRadioValue}>
+        <Radio.Item value={1}>Label 1</Radio.Item>
+        <Radio.Item value={2}>Label 2</Radio.Item>
+        <Radio.Item value={3} disabled>
+          Label 3
+        </Radio.Item>
+      </Radio>
+
+      <h3>Upload</h3>
+      <Upload onUpload={console.log} onError={console.log} />
+
+      <h2>Grid</h2>
+      <div
+        style={{
+          padding: '10px 0',
+          textAlign: 'center',
+        }}
+      >
+        <Row>
+          <Col span={4}>33%</Col>
+          <Col span={4}>33%</Col>
+          <Col span={4}>33%</Col>
+          <Col span={3}>25%</Col>
+          <Col span={3}>25%</Col>
+          <Col span={3}>25%</Col>
+          <Col span={6}>50%</Col>
+          <Col span={6}>50%</Col>
+          <Col span={12}>100%</Col>
+        </Row>
+      </div>
+
+      <h2>Modal</h2>
+      <Modal visible={isVisible}>
+        <p>Some content</p>
+        <p>Some content</p>
+        <p>Some content</p>
+        <p>Some content</p>
+        <button onClick={() => setIsVisible(false)}>Close modal</button>
+      </Modal>
+      <button onClick={() => setIsVisible(true)}>Open modal</button>
+
+      <h2>Table</h2>
+      <Table columns={columns} data={dataSource} />
+
+      <BackTop>To the top</BackTop>
     </div>
   );
 };
