@@ -11,9 +11,36 @@ import Radio from '../src/components/Form/Radio';
 import Upload from '../src/components/Form/Upload';
 import Modal from '../src/components/Modal';
 import { Row, Col } from '../src/components/Grid';
+import Table from '../src/components/Table';
 import BackTop from '../src/components/BackTop';
 
 import './example.scss';
+
+const dataSource = [
+  {
+    key: '1',
+    name: 'John',
+    age: 20,
+  },
+  {
+    key: '2',
+    name: 'Alice',
+    age: 25,
+  },
+];
+
+const columns = [
+  {
+    title: 'Name',
+    index: 'name',
+    key: 'name',
+  },
+  {
+    title: 'Age',
+    index: 'age',
+    key: 'age',
+  },
+];
 
 const App = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
@@ -139,6 +166,9 @@ const App = () => {
         <button onClick={() => setIsVisible(false)}>Close modal</button>
       </Modal>
       <button onClick={() => setIsVisible(true)}>Open modal</button>
+
+      <h2>Table</h2>
+      <Table columns={columns} data={dataSource} />
 
       <BackTop>To the top</BackTop>
     </div>
