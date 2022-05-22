@@ -9,6 +9,7 @@ import Input from '../src/components/Form/Input';
 import Checkbox from '../src/components/Form/Checkbox';
 import Radio from '../src/components/Form/Radio';
 import Upload from '../src/components/Form/Upload';
+import Modal from '../src/components/Modal';
 import { Row, Col } from '../src/components/Grid';
 import BackTop from '../src/components/BackTop';
 
@@ -16,6 +17,7 @@ import './example.scss';
 
 const App = () => {
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
+  const [isVisible, setIsVisible] = React.useState<boolean>(false);
   const [radioValue, setRadioValue] = React.useState<number>(1);
 
   return (
@@ -108,9 +110,11 @@ const App = () => {
       <h3>Upload</h3>
       <Upload onUpload={console.log} onError={console.log} />
 
+      <h2>Grid</h2>
       <div
         style={{
           padding: '10px 0',
+          textAlign: 'center',
         }}
       >
         <Row>
@@ -125,6 +129,16 @@ const App = () => {
           <Col span={12}>100%</Col>
         </Row>
       </div>
+
+      <h2>Modal</h2>
+      <Modal visible={isVisible}>
+        <p>Some content</p>
+        <p>Some content</p>
+        <p>Some content</p>
+        <p>Some content</p>
+        <button onClick={() => setIsVisible(false)}>Close modal</button>
+      </Modal>
+      <button onClick={() => setIsVisible(true)}>Open modal</button>
 
       <BackTop>To the top</BackTop>
     </div>

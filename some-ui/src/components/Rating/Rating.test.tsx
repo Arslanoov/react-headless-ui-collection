@@ -7,7 +7,7 @@ import Rating from './Rating';
 
 // TODO: Add prefix import
 
-describe('Rating component', function () {
+describe('Rating component', () => {
   it('should correctly render default value', () => {
     const { container } = render(<Rating defaultValue={2} />);
 
