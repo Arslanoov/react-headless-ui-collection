@@ -9,6 +9,7 @@ import Input from '../src/components/Form/Input';
 import Checkbox from '../src/components/Form/Checkbox';
 import Radio from '../src/components/Form/Radio';
 import Upload from '../src/components/Form/Upload';
+import { Row, Col } from '../src/components/Grid';
 import BackTop from '../src/components/BackTop';
 
 import './example.scss';
@@ -106,6 +107,24 @@ const App = () => {
 
       <h3>Upload</h3>
       <Upload onUpload={console.log} onError={console.log} />
+
+      <div
+        style={{
+          padding: '10px 0',
+        }}
+      >
+        <Row>
+          <Col span={4}>33%</Col>
+          <Col span={4}>33%</Col>
+          <Col span={4}>33%</Col>
+          <Col span={3}>25%</Col>
+          <Col span={3}>25%</Col>
+          <Col span={3}>25%</Col>
+          <Col span={6}>50%</Col>
+          <Col span={6}>50%</Col>
+          <Col span={12}>100%</Col>
+        </Row>
+      </div>
 
       <BackTop>To the top</BackTop>
     </div>
