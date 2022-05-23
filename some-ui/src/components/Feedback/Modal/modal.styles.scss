@@ -23,9 +23,9 @@
 
   padding: 15px;
 
-  background-color: #fff;
+  background-color: $ui-color-white;
 
-  border: 1px solid #000;
+  border: 1px solid $ui-color-black;
 
   &_visible {
     display: block;
