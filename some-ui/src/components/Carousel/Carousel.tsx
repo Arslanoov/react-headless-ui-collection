@@ -5,21 +5,21 @@ import { PREFIX } from '../../const/prefix';
 const CAROUSEL_PREFIX = `${PREFIX}-carousel`;
 
 type Props = {
-  width: number;
-  height: number;
   children: React.ReactElement[];
+  width?: number;
+  height?: number;
   autoplay?: boolean;
   autoplayTimeout?: number;
   onChange?: (index: number) => void;
 };
 
 const Carousel: React.FC<Props> = ({
-  width,
-  height,
-  children,
+  width = 500,
+  height = 150,
   autoplay = false,
   autoplayTimeout = 3000,
   onChange = () => {},
+  children,
 }) => {
   const [page, setPage] = useState(0);
 
