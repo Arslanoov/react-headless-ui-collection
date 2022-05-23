@@ -24,7 +24,9 @@ export default {
     babel({
       presets: ['@babel/preset-react'],
     }),
-    scss(),
+    scss({
+      prefix: '@import "./src/assets/styles/main.scss";',
+    }),
     url(),
     svgr(),
     resolve(),
@@ -34,7 +36,7 @@ export default {
     typescript({
       rollupCommonJSResolveHack: true,
       clean: true,
-      check: false // TODO: Fix build
+      check: false, // TODO: Fix build
     }),
     serve({
       open: true,
@@ -46,7 +48,7 @@ export default {
       port: 3005,
     }),
     livereload({
-      watch: 'serve'
-    })
-  ]
+      watch: 'serve',
+    }),
+  ],
 };

@@ -2,8 +2,6 @@ import React, { ChangeEvent } from 'react';
 
 import { PREFIX } from '@/const/prefix';
 
-// TODO: Separate types
-
 const UPLOAD_PREFIX = `${PREFIX}-upload`;
 
 type ValidationRule = 'maxSize' | 'format' | 'required';
