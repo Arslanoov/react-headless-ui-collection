@@ -7,7 +7,7 @@ import useBackTop from './useBackTop';
 const BACKTOP_PREFIX = `${PREFIX}-backtop`;
 
 type BackTopProps = {
-  children: React.ReactElement;
+  children: React.ReactElement | string;
 };
 
 const BackTop: React.FC<BackTopProps> = ({ children = <div>top</div> }) => {
