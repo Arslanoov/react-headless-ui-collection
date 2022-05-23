@@ -1,12 +1,24 @@
-.someui {
-    &-bc {
-        &__items {
-            display: flex;
-            align-items: center;
-        }
+.someui-bc {
+  &__items {
+    display: flex;
+    align-items: center;
+  }
 
-        &__separator {
-            margin: 0 10px;
-        }
+  &__item {
+    a {
+      text-decoration: none;
+
+      color: $ui-color-3;
     }
+
+    &_current {
+      color: $ui-color-blue;
+    }
+  }
+
+  &__separator {
+    margin: 0 10px;
+
+    color: $ui-color-3;
+  }
 }
