@@ -1,5 +1,10 @@
 .someui-select {
   &__items {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+
     display: flex;
     flex-direction: column;
 
@@ -8,6 +13,7 @@
     transition: opacity .5s;
 
     &_hidden {
+      display: none;
       opacity: 0;
       
       .someui-select__item {
@@ -24,6 +30,8 @@
     justify-content: center;
     align-items: center;
 
+    background-color: $ui-color-white;
+
     border: 1px solid black;
 
     &:hover {
@@ -32,8 +40,10 @@
   }
 
   &__item {
-    width: 150px;
-    height: 35px;
+    position: absolute;
+    left: 0;
+
+    z-index: 10;
   }
 
   &__preview {

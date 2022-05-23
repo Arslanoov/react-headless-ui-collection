@@ -56,6 +56,8 @@ const App = () => {
     <div>
       <h1>Components</h1>
 
+      <hr />
+
       <h2>Navigation</h2>
       <h3>Breadcrumb</h3>
       <Breadcrumb separator={<div className="separator">/</div>}>
@@ -69,6 +71,8 @@ const App = () => {
           Project1
         </Breadcrumb.Item>
       </Breadcrumb>
+
+      <hr />
 
       <h2>Data Display</h2>
       <h3>Carousel</h3>
@@ -97,15 +101,11 @@ const App = () => {
       <h3>Table</h3>
       <Table columns={columns} data={dataSource} />
 
+      <hr />
+
       <h2>Form</h2>
       <h3>Rating</h3>
-      <Rating
-        defaultValue={3}
-        onChange={() => {}}
-        readOnly={false}
-        withHalf={true}
-        customIcon={() => <div>icon</div>}
-      />
+      <Rating defaultValue={3} onChange={() => {}} readOnly={false} withHalf={true} />
 
       <h3>Select</h3>
       <Select onChange={() => {}} defaultValue="Option2" disabled={false} placeholder="placeholder">
@@ -141,6 +141,8 @@ const App = () => {
       <h3>Upload</h3>
       <Upload onUpload={console.log} onError={console.log} />
 
+      <hr />
+
       <h2>Layout</h2>
       <h3>Grid</h3>
       <div
@@ -161,6 +163,8 @@ const App = () => {
           <Col span={12}>100%</Col>
         </Row>
       </div>
+
+      <hr />
 
       <h2>Feedback</h2>
       <h3>Modal</h3>

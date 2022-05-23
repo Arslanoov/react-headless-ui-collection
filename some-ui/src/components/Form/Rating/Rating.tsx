@@ -4,14 +4,14 @@ import { PREFIX } from '@/const/prefix';
 
 export const RATING_PREFIX = `${PREFIX}-rate`;
 
-const CustomRatingIcon = () => <div>Star</div>;
+const CustomRatingIcon = () => <div>⋆</div>;
 
 type RatingProps = {
   defaultValue?: number;
   onChange?: (index: number) => void;
   readOnly?: boolean;
   withHalf?: boolean;
-  customIcon?: (index: number) => React.ReactElement;
+  customIcon?: (index: number, isActive: boolean) => React.ReactElement;
   className?: string;
 };
 
@@ -39,7 +39,7 @@ const Rating: React.FC<RatingProps> = ({
         className={`${RATING_PREFIX}__item ${i > value ? RATING_PREFIX + '__item_disabled' : ''}`}
         key={i}
       >
-        {customIcon(i)}
+        {customIcon(i, i <= value)}
       </div>
     );
   }

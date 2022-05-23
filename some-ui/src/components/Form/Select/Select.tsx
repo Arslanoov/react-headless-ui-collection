@@ -11,12 +11,13 @@ export const SELECT_PREFIX = `${PREFIX}-select`;
 type OptionProps = {
   value: string | null;
   children: React.ReactElement | React.ReactElement[] | string;
+  index?: number;
   className?: string;
   disabled?: boolean;
 };
 
-const Option: React.FC<OptionProps> = ({ children, value = null, className = '', disabled = false }) => {
-  const onChange = useContext(SelectContext);
+const Option: React.FC<OptionProps> = ({ children, value = null, index = 0, className = '', disabled = false }) => {
+  const { onSelect, width, height } = useContext(SelectContext);
 
   return (
     <div
@@ -25,7 +26,12 @@ const Option: React.FC<OptionProps> = ({ children, value = null, className = '',
         ${disabled && SELECT_PREFIX + '__item_disabled'}
         ${className}
       `}
-      onClick={() => !disabled && onChange(value)}
+      style={{
+        width,
+        height,
+        top: index * height,
+      }}
+      onClick={() => !disabled && onSelect(value)}
     >
       {children}
     </div>
@@ -33,6 +39,8 @@ const Option: React.FC<OptionProps> = ({ children, value = null, className = '',
 };
 
 type SelectProps = {
+  width?: number;
+  height?: number;
   onChange?: OnChangeHandler;
   defaultValue?: string | null;
   placeholder?: string | null;
@@ -46,6 +54,8 @@ type SelectComposition = {
 };
 
 const Select: React.FC<SelectProps> & SelectComposition = ({
+  width = 150,
+  height = 35,
   onChange = () => {},
   disabled = false,
   placeholder = null,
@@ -72,15 +82,21 @@ const Select: React.FC<SelectProps> & SelectComposition = ({
         onClick={() => !disabled && toggleSelect()}
         className={`
           ${SELECT_PREFIX}__preview
-          ${disabled && SELECT_PREFIX + '__preview_disabled'}
+          ${disabled ? SELECT_PREFIX + '__preview_disabled' : ''}
           ${className}
         `}
       >
         {selectedValue || placeholder}
       </div>
-      <SelectContext.Provider value={onSelect}>
-        <div className={`${SELECT_PREFIX}__items ${!isOpenedSelect && SELECT_PREFIX + '__items_hidden'}`}>
-          {children}
+      <SelectContext.Provider
+        value={{
+          onSelect,
+          width,
+          height,
+        }}
+      >
+        <div className={`${SELECT_PREFIX}__items ${!isOpenedSelect ? SELECT_PREFIX + '__items_hidden' : ''}`}>
+          {React.Children.map(children, (child, index) => React.cloneElement(child, { index }))}
         </div>
       </SelectContext.Provider>
     </div>
