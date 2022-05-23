@@ -1,0 +1,70 @@
+@mixin grid-value($columnsCount, $span) {
+  width: calc(100% / #{$columnsCount} * #{$span});
+}
+
+.someui-grid {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+
+  &__col {
+    box-sizing: border-box;
+
+    padding: 5px 0;
+
+    border: 1px solid black;
+
+    text-align: center;
+
+    &-1 {
+      @include grid-value(12, 1);
+    }
+
+    &-2 {
+      @include grid-value(12, 2);
+    }
+
+    &-3 {
+      @include grid-value(12, 3);
+    }
+
+    &-4 {
+      @include grid-value(12, 4);
+    }
+
+    &-5 {
+      @include grid-value(12, 5);
+    }
+
+    &-6 {
+      @include grid-value(12, 6);
+    }
+
+    &-7 {
+      @include grid-value(12, 7);
+    }
+
+    &-8 {
+      @include grid-value(12, 8);
+    }
+
+    &-9 {
+      @include grid-value(12, 9);
+    }
+
+    &-10 {
+      @include grid-value(12, 10);
+    }
+
+    &-11 {
+      @include grid-value(12, 11);
+    }
+
+    &-12 {
+      @include grid-value(12, 12);
+    }
+  }
+}

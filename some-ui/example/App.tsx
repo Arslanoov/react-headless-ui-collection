@@ -1,18 +1,23 @@
 import * as React from 'react';
 
-import Breadcrumb from '../src/components/Breadcrumb';
-import Rating from '../src/components/Rating';
-import Carousel from '../src/components/Carousel';
-import Collapse from '../src/components/Collapse';
+import Breadcrumb from '../src/components/Navigation/Breadcrumb';
+
+import Carousel from '../src/components/DataDisplay/Carousel';
+import Collapse from '../src/components/DataDisplay/Collapse';
+import Table from '../src/components/DataDisplay/Table';
+
+import Rating from '../src/components/Form/Rating';
 import Select from '../src/components/Form/Select';
 import Input from '../src/components/Form/Input';
 import Checkbox from '../src/components/Form/Checkbox';
 import Radio from '../src/components/Form/Radio';
 import Upload from '../src/components/Form/Upload';
-import Modal from '../src/components/Modal';
-import { Row, Col } from '../src/components/Grid';
-import Table from '../src/components/Table';
-import BackTop from '../src/components/BackTop';
+
+import Modal from '../src/components/Feedback/Modal';
+
+import { Row, Col } from '../src/components/Layout/Grid';
+
+import BackTop from '../src/components/Other/BackTop';
 
 import './example.scss';
 
@@ -51,7 +56,8 @@ const App = () => {
     <div>
       <h1>Components</h1>
 
-      <h2>Breadcrumb</h2>
+      <h2>Navigation</h2>
+      <h3>Breadcrumb</h3>
       <Breadcrumb separator={<div className="separator">/</div>}>
         <Breadcrumb.Item key="home" className="item">
           <a href="/">Home</a>
@@ -64,23 +70,15 @@ const App = () => {
         </Breadcrumb.Item>
       </Breadcrumb>
 
-      <h2>Rating</h2>
-      <Rating
-        defaultValue={3}
-        onChange={() => {}}
-        readOnly={false}
-        withHalf={true}
-        customIcon={() => <div>icon</div>}
-      />
-
-      <h2>Carousel</h2>
+      <h2>Data Display</h2>
+      <h3>Carousel</h3>
       <Carousel width={500} height={150} autoplay>
         <div>First</div>
         <div>Second</div>
         <div>Third</div>
       </Carousel>
 
-      <h2>Collapse</h2>
+      <h3>Collapse</h3>
       <Collapse defaultActiveIndex={[1, 3]}>
         <Collapse.Panel key="1" header="Some header 1">
           Some content 1
@@ -96,18 +94,24 @@ const App = () => {
         </Collapse.Panel>
       </Collapse>
 
+      <h3>Table</h3>
+      <Table columns={columns} data={dataSource} />
+
       <h2>Form</h2>
+      <h3>Rating</h3>
+      <Rating
+        defaultValue={3}
+        onChange={() => {}}
+        readOnly={false}
+        withHalf={true}
+        customIcon={() => <div>icon</div>}
+      />
+
       <h3>Select</h3>
       <Select onChange={() => {}} defaultValue="Option2" disabled={false} placeholder="placeholder">
-        <Select.Option value="Option1" disabled>
-          Option1
-        </Select.Option>
-        <Select.Option value="Option2" disabled>
-          Option2
-        </Select.Option>
-        <Select.Option value="Option3" disabled>
-          Option3
-        </Select.Option>
+        <Select.Option value="Option1">Option1</Select.Option>
+        <Select.Option value="Option2">Option2</Select.Option>
+        <Select.Option value="Option3">Option3</Select.Option>
       </Select>
 
       <h3>Input</h3>
@@ -137,7 +141,8 @@ const App = () => {
       <h3>Upload</h3>
       <Upload onUpload={console.log} onError={console.log} />
 
-      <h2>Grid</h2>
+      <h2>Layout</h2>
+      <h3>Grid</h3>
       <div
         style={{
           padding: '10px 0',
@@ -157,7 +162,8 @@ const App = () => {
         </Row>
       </div>
 
-      <h2>Modal</h2>
+      <h2>Feedback</h2>
+      <h3>Modal</h3>
       <Modal visible={isVisible}>
         <p>Some content</p>
         <p>Some content</p>
@@ -166,9 +172,6 @@ const App = () => {
         <button onClick={() => setIsVisible(false)}>Close modal</button>
       </Modal>
       <button onClick={() => setIsVisible(true)}>Open modal</button>
-
-      <h2>Table</h2>
-      <Table columns={columns} data={dataSource} />
 
       <BackTop>To the top</BackTop>
     </div>

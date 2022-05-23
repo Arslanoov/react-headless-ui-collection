@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { PREFIX } from '../../const/prefix';
+import { PREFIX } from '../../../const/prefix';
 
 const BREADCRUMB_PREFIX = `${PREFIX}-bc`;
 
