@@ -36,9 +36,7 @@ const Carousel: React.FC<Props> = ({
         className={`${CAROUSEL_PREFIX}__pagination-item ${page === i && CAROUSEL_PREFIX + '__pagination-item_current'}`}
         onClick={() => onPageChange(i)}
         key={i}
-      >
-        {i}
-      </div>
+      />
     );
   }
 

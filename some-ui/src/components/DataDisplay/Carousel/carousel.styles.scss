@@ -2,7 +2,8 @@
   &__container {
     position: relative;
 
-    border: 1px solid $color-1;
+    color: $ui-color-3;
+    background-color: $ui-color-1;
   }
 
   &__items {
@@ -19,13 +20,17 @@
       width: 100%;
       height: 100%;
     }
+
+    & > * {
+      padding: 10px;
+    }
   }
 
   &__pagination {
     position: absolute;
 
     left: 50%;
-    bottom: 20px;
+    bottom: 10px;
 
     transform: translateX(-50%);
 
@@ -37,10 +42,18 @@
       justify-content: center;
       align-items: center;
 
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 5px;
 
-      border: 1px solid black;
+      border-radius: 5px;
+
+      background-color: $ui-color-3;
+
+      transition: width .5s;
+
+      &_current {
+        width: 30px;
+      }
 
       &:hover {
         cursor: pointer;
