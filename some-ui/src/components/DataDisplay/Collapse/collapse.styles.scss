@@ -15,9 +15,10 @@
       padding: 15px;
 
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 400;
 
-      background: grey;
+      color: $ui-color-3;
+      background-color: $ui-color-1;
 
       &:not(&_disabled) {
         &:hover {
