@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { PREFIX } from '../../const/prefix';
+import { PREFIX } from '../../../const/prefix';
 
 const CAROUSEL_PREFIX = `${PREFIX}-carousel`;
 
