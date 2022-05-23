@@ -99,15 +99,9 @@ const App = () => {
       <h2>Form</h2>
       <h3>Select</h3>
       <Select onChange={() => {}} defaultValue="Option2" disabled={false} placeholder="placeholder">
-        <Select.Option value="Option1" disabled>
-          Option1
-        </Select.Option>
-        <Select.Option value="Option2" disabled>
-          Option2
-        </Select.Option>
-        <Select.Option value="Option3" disabled>
-          Option3
-        </Select.Option>
+        <Select.Option value="Option1">Option1</Select.Option>
+        <Select.Option value="Option2">Option2</Select.Option>
+        <Select.Option value="Option3">Option3</Select.Option>
       </Select>
 
       <h3>Input</h3>
