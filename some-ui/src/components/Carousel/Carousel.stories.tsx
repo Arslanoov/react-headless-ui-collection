@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Carousel from '.';
 
 export default {
-  title: 'Carousel',
+  title: 'Data Display/Carousel',
   component: Carousel,
 } as ComponentMeta<typeof Carousel>;
 

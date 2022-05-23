@@ -6,7 +6,7 @@ import BackTop from '.';
 import './backtop-stories.styles.scss';
 
 export default {
-  title: 'BackTop',
+  title: 'Other/BackTop',
   component: BackTop,
 } as ComponentMeta<typeof BackTop>;
 
