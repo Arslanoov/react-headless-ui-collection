@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { PREFIX } from '../../../const/prefix';
+import { PREFIX } from '@/const/prefix';
 
 const MODAL_PREFIX = `${PREFIX}-modal`;
 

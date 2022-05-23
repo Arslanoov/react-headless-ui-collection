@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PREFIX } from '../../../const/prefix';
+import { PREFIX } from '@/const/prefix';
 
 const GRID_PREFIX = `${PREFIX}-grid`;
 

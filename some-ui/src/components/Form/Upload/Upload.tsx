@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 
-import { PREFIX } from '../../../const/prefix';
+import { PREFIX } from '@/const/prefix';
 
 // TODO: Separate types
 

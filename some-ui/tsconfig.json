@@ -19,7 +19,10 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@/*" : ["./src/*"]
+    }
   },
   "include": ["src"],
   "exclude": [

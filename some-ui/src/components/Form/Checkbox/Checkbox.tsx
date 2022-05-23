@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PREFIX } from '../../../const/prefix';
+import { PREFIX } from '@/const/prefix';
 
 const CHECKBOX_PREFIX = `${PREFIX}-cb`;
 

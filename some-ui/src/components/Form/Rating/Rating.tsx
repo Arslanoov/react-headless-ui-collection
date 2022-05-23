@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { PREFIX } from '../../../const/prefix';
+import { PREFIX } from '@/const/prefix';
 
 const RATING_PREFIX = `${PREFIX}-rate`;
 
