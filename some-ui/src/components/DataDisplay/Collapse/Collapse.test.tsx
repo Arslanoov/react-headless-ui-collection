@@ -40,15 +40,15 @@ describe('Collapse component', () => {
 
     expect(onChangeSpy).not.toBeCalled();
 
-    await userEvent.click(screen.queryByText('Some header 2') as HTMLElement);
+    await userEvent.click(await screen.findByText('Some header 2'));
 
     expect(onChangeSpy).toBeCalledWith(1, true);
 
-    await userEvent.click(screen.queryByText('Some header 2') as HTMLElement);
+    await userEvent.click(await screen.findByText('Some header 2'));
 
     expect(onChangeSpy).toBeCalledWith(1, false);
 
-    await userEvent.click(screen.queryByText('Some header 1') as HTMLElement);
+    await userEvent.click(await screen.findByText('Some header 1'));
 
     expect(onChangeSpy).toBeCalledWith(0, true);
   });
@@ -69,7 +69,7 @@ describe('Collapse component', () => {
 
     expect(onChangeSpy).not.toBeCalled();
 
-    await userEvent.click(screen.queryByText('Some header 2') as HTMLElement);
+    await userEvent.click(await screen.findByText('Some header 2'));
 
     expect(onChangeSpy).not.toBeCalled();
   });

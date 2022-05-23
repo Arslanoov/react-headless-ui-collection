@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { PREFIX } from '@/const/prefix';
 
-const RATING_PREFIX = `${PREFIX}-rate`;
+export const RATING_PREFIX = `${PREFIX}-rate`;
 
 const CustomRatingIcon = () => <div>Star</div>;
 

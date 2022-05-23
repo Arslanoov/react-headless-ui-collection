@@ -13,6 +13,9 @@ export default {
     formats: {
       description: 'Array of allowed file formats',
     },
+    onError: {
+      description: 'Returns an object, where key is error name, and value is boolean (true if an error)',
+    },
   },
 } as ComponentMeta<typeof Upload>;
 

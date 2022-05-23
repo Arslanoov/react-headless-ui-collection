@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import Carousel from './Carousel';
+import Carousel, { CAROUSEL_PREFIX } from './Carousel';
 
-describe('Carousel component', function () {
+describe('Carousel component', () => {
   it('should render items', () => {
     render(
       <Carousel width={200} height={200}>
@@ -33,17 +33,16 @@ describe('Carousel component', function () {
 
     expect(onChangeSpy).toBeCalledTimes(0);
 
-    const paginationItem = container.querySelectorAll('.someui-carousel__pagination-item')[1];
+    const paginationItem = container.querySelectorAll(`.${CAROUSEL_PREFIX}__pagination-item`)[1];
     await userEvent.click(paginationItem);
 
     expect(onChangeSpy).toBeCalledTimes(1);
 
-    const anotherPaginationItem = container.querySelectorAll('.someui-carousel__pagination-item')[2];
+    const anotherPaginationItem = container.querySelectorAll(`.${CAROUSEL_PREFIX}__pagination-item`)[2];
     await userEvent.click(anotherPaginationItem);
 
     expect(onChangeSpy).toBeCalledTimes(2);
   });
 
-  // TODO: Write test
   it.todo('should animate automatically');
 });

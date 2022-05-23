@@ -20,7 +20,7 @@ describe('Input component', () => {
 
     expect(onChangeSpy).not.toBeCalled();
 
-    await userEvent.type(screen.getByRole('textbox'), 'smth');
+    await userEvent.type(await screen.findByRole('textbox'), 'smth');
 
     expect(onChangeSpy).toHaveBeenCalledTimes(4);
   });
@@ -32,7 +32,7 @@ describe('Input component', () => {
 
     expect(onChangeSpy).not.toBeCalled();
 
-    await userEvent.type(screen.getByRole('textbox'), 'some text');
+    await userEvent.type(await screen.findByRole('textbox'), 'some text');
 
     expect(onChangeSpy).not.toBeCalled();
   });
@@ -55,7 +55,7 @@ describe('Input component', () => {
     expect(onErrorSpy).not.toBeCalled();
     expect(onChangeSpy).not.toBeCalled();
 
-    await userEvent.type(screen.getByRole('textbox'), 'a');
+    await userEvent.type(await screen.findByRole('textbox'), 'a');
 
     expect(onErrorSpy).toHaveBeenCalledWith(['Some error']);
     expect(onChangeSpy).not.toBeCalled();

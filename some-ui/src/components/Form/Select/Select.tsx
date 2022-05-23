@@ -6,7 +6,7 @@ import SelectContext from './Select.context';
 
 import { PREFIX } from '@/const/prefix';
 
-const SELECT_PREFIX = `${PREFIX}-select`;
+export const SELECT_PREFIX = `${PREFIX}-select`;
 
 type OptionProps = {
   value: string | null;

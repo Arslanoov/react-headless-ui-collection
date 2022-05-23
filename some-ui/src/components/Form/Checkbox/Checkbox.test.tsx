@@ -21,7 +21,7 @@ describe('Checkbox component', () => {
 
     expect(onChangeSpy).not.toHaveBeenCalled();
 
-    await userEvent.click(screen.getByRole('checkbox'));
+    await userEvent.click(await screen.findByRole('checkbox'));
 
     expect(onChangeSpy).toHaveBeenCalledWith(true);
   });
@@ -33,7 +33,7 @@ describe('Checkbox component', () => {
 
     expect(onChangeSpy).not.toHaveBeenCalled();
 
-    await userEvent.click(screen.getByRole('checkbox'));
+    await userEvent.click(await screen.findByRole('checkbox'));
 
     expect(onChangeSpy).not.toHaveBeenCalled();
   });

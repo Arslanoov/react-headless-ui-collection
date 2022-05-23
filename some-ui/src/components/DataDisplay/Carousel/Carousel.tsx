@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { PREFIX } from '@/const/prefix';
 
-const CAROUSEL_PREFIX = `${PREFIX}-carousel`;
+export const CAROUSEL_PREFIX = `${PREFIX}-carousel`;
 
 type Props = {
   children: React.ReactElement[];

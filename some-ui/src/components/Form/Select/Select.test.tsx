@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import Select from './Select';
+import Select, { SELECT_PREFIX } from './Select';
 
 describe('Select component', () => {
   it('should render items', () => {
@@ -15,7 +15,7 @@ describe('Select component', () => {
       </Select>
     );
 
-    expect(container.querySelectorAll('.someui-select__item').length).toBe(3);
+    expect(container.querySelectorAll(`.${SELECT_PREFIX}__item`).length).toBe(3);
     expect(screen.queryByText('1')).toBeInTheDocument();
     expect(screen.queryByText('2')).toBeInTheDocument();
     expect(screen.queryByText('3')).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Select component', () => {
       </Select>
     );
 
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('2');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('2');
   });
 
   it('should show placeholder', () => {
@@ -42,7 +42,7 @@ describe('Select component', () => {
       </Select>
     );
 
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('some placeholder');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('some placeholder');
   });
 
   it('should select element', async () => {
@@ -56,15 +56,15 @@ describe('Select component', () => {
       </Select>
     );
 
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('');
 
     expect(onSelectSpy).not.toHaveBeenCalled();
 
-    await userEvent.click(container.querySelectorAll('.someui-select__item')[1]);
+    await userEvent.click(container.querySelectorAll(`.${SELECT_PREFIX}__item`)[1]);
 
     expect(onSelectSpy).toHaveBeenCalledTimes(1);
 
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('2');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('2');
   });
 
   it('should be disabled', async () => {
@@ -78,13 +78,13 @@ describe('Select component', () => {
       </Select>
     );
 
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('2');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('2');
     expect(onSelectSpy).not.toHaveBeenCalled();
 
-    await userEvent.click(container.querySelectorAll('.someui-select__item')[1]);
+    await userEvent.click(container.querySelectorAll(`.${SELECT_PREFIX}__item`)[1]);
 
     expect(onSelectSpy).not.toHaveBeenCalled();
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('2');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('2');
   });
 
   it('option should be disabled', async () => {
@@ -100,12 +100,12 @@ describe('Select component', () => {
       </Select>
     );
 
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('2');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('2');
     expect(onSelectSpy).not.toHaveBeenCalled();
 
-    await userEvent.click(container.querySelectorAll('.someui-select__item')[1]);
+    await userEvent.click(container.querySelectorAll(`.${SELECT_PREFIX}__item`)[1]);
 
     expect(onSelectSpy).not.toHaveBeenCalled();
-    expect(container.querySelector('.someui-select__preview')?.innerHTML).toBe('2');
+    expect(container.querySelector(`.${SELECT_PREFIX}__preview`)?.innerHTML).toBe('2');
   });
 });

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { PREFIX } from '@/const/prefix';
 
-const MODAL_PREFIX = `${PREFIX}-modal`;
+export const MODAL_PREFIX = `${PREFIX}-modal`;
 
 type ModalProps = {
   visible?: boolean;
