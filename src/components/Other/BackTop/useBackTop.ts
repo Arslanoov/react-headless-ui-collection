@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { debounce } from '@/helpers/debounce';
+import { debounce } from 'helpers/debounce';
 
 export default function useBackTop(): [() => void, boolean] {
   const [isVisible, setIsVisible] = useState<boolean>(false);

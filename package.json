@@ -6,6 +6,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "repository": "https://github.com/Arslanoov/react-collection-ui",
+  "homepage": "http://Arslanoov.github.io/react-collection-ui",
   "author": "Arslanoov",
   "license": "MIT",
   "scripts": {
@@ -16,7 +17,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -42,6 +45,7 @@
     "@web/rollup-plugin-html": "^1.10.3",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
@@ -53,6 +57,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.5.11",
+    "gh-pages": "^4.0.0",
     "jest": "^24.8.0",
     "jest-environment-jsdom-sixteen": "^2.0.0",
     "postcss": "^8.4.12",
@@ -71,7 +76,10 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
     "sass": "^1.51.0",
+    "sass-loader": "^10",
+    "sass-resources-loader": "^2.2.5",
     "storybook-addon-sass-postcss": "^0.1.1",
+    "style-loader": "^3.3.1",
     "ts-jest": "^24.0.2",
     "typescript": "^4.6.3"
   }

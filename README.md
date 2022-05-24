@@ -1,1 +1,1 @@
-## React UI Components
+## React Collection UI
