@@ -1,4 +1,4 @@
-import external from 'rollup-plugin-peer-deps-external';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import url from '@rollup/plugin-url';
 import resolve from '@rollup/plugin-node-resolve';
@@ -30,12 +30,17 @@ export default {
       sourcemap: true,
     },
   ],
+  external: ['react'],
   plugins: [
+    peerDepsExternal(),
+    resolve({
+      browser: true,
+      dedupe: ['react', 'react-dom'],
+    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
       preventAssignment: true,
     }),
-    external(),
     babel({
       presets: ['@babel/preset-react'],
     }),
@@ -54,11 +59,10 @@ export default {
     terser(),
     url(),
     svgr(),
-    resolve(),
+    commonjs(),
     typescript({
       rollupCommonJSResolveHack: true,
       clean: true,
     }),
-    commonjs(),
   ],
 };

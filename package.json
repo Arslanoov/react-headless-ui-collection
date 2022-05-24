@@ -1,6 +1,6 @@
 {
   "name": "react-collection-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Collection of React UI components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -20,6 +20,10 @@
     "build-storybook": "build-storybook",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
