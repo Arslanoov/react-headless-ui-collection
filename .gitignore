@@ -1,2 +1,5 @@
 .idea
+yarn-error.log
+node_modules
+serve
 etc
