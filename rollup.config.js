@@ -7,6 +7,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import svgr from '@svgr/rollup';
 import scss from 'rollup-plugin-scss';
 import autoprefixer from 'autoprefixer';
+import { terser } from 'rollup-plugin-terser';
+import css from 'rollup-plugin-css-only';
 
 import pkg from './package.json';
 import babel from '@rollup/plugin-babel';
@@ -40,13 +42,16 @@ export default {
     scss({
       prefix: '@import "./src/assets/styles/main.scss";',
     }),
+    css({
+      output: 'bundle.css',
+    }),
     postcss({
-      modules: false,
       extract: true,
       minimize: true,
       sourceMap: true,
       plugins: [autoprefixer()],
     }),
+    terser(),
     url(),
     svgr(),
     resolve(),
