@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { PREFIX } from '@/const/prefix';
+import { PREFIX } from 'const/prefix';
 
 import type { RadioValue, OnRadioChange } from './radio.context';
 import RadioContext from './radio.context';

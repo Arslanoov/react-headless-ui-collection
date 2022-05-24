@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import { PREFIX } from '@/const/prefix';
+import { PREFIX } from 'const/prefix';
 
 import CollapseContext, { OnChangeHandler } from './Collapse.context';
 
