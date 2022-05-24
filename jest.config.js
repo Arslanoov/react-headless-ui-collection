@@ -7,4 +7,6 @@ module.exports = {
     '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.ts',
     '@/(.*)': '<rootDir>/src/$1',
   },
+  modulePathIgnorePatterns: ['<rootDir>/node_modules.*/react'],
+  moduleDirectories: ['node_modules', 'src'],
 };
