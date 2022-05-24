@@ -1,0 +1,54 @@
+.ruc-collapse {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__panel {
+    width: 100%;
+
+    &-header {
+      display: flex;
+      align-items: center;
+
+      margin: 0 0 4px;
+      padding: 15px;
+
+      font-size: 16px;
+      font-weight: 400;
+
+      color: $ui-color-2;
+      background-color: $ui-color-1;
+
+      &:not(&_disabled) {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-icon {
+      margin-right: 10px;
+    }
+
+    &-content {
+      height: 0;
+      padding: 0;
+
+      overflow: hidden;
+
+      opacity: 0;
+
+      font-size: 14px;
+
+      transition: height .3s, padding .4s, opacity .2s;
+
+      &_active {
+        height: 100%;
+        padding: 15px;
+
+        opacity: 1;
+      }
+    }
+  }
+}

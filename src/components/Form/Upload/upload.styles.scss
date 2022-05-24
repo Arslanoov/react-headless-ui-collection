@@ -1,0 +1,19 @@
+.ruc-upload {
+  padding: 5px 10px;
+
+  border: 1px solid $ui-color-3;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &,
+  &__button {
+    width: 60px;
+    height: 20px;
+  }
+
+  &__input {
+    display: none;
+  }
+}

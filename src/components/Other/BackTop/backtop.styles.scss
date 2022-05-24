@@ -1,0 +1,22 @@
+.ruc-backtop {
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+
+  display: inline-block;
+
+  padding: 15px;
+  min-height: 18px;
+  min-width: 18px;
+
+  border: 1px solid $ui-color-3;
+  border-radius: 40px;
+
+  background-color: $ui-color-3;
+  color: $ui-color-white;
+
+  cursor: pointer;
+
+  transition: opacity .2s;
+}
