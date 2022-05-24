@@ -1,0 +1,22 @@
+@function grid-value($columnsCount, $span) {
+  @return 100 / $columnsCount * $span;
+}
+
+@mixin grid-columns($columnsCount, $class) {
+  @for $i from 1 through $columnsCount {
+    .#{$class}-#{$i} {
+      width: #{grid-value($columnsCount, $i)}#{'%'};
+    }
+  }
+}
+
+.ruc-grid {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+}
+
+@include grid-columns(12, 'ruc-grid__col');

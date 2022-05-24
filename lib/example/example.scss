@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+hr {
+  margin: 20px 0 10px 0;
+}
+
+.separator {
+  margin: 0 10px;
+}
+
+.ruc-grid__col {
+  box-sizing: border-box;
+
+  padding: 5px 0;
+
+  border: 1px solid black;
+}
