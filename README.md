@@ -1,4 +1,5 @@
 <h2 align="center">React Collection UI</h2>
+
 <p align="center">
     <img width="150px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" />
 </p>
@@ -9,6 +10,10 @@
 
 <p align="center">
     <a href="https://arslanoov.github.io/react-collection-ui/">Documentation (Storybook)</a>
+</p>
+
+<p align="center">
+    <img src="https://views.whatilearened.today/views/github/Arslanoov/react-collection-ui.svg" />
 </p>
 
 <p align="center">
