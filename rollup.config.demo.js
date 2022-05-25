@@ -1,4 +1,3 @@
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import livereload from 'rollup-plugin-livereload';
 import url from '@rollup/plugin-url';
 import typescript from 'rollup-plugin-typescript2';
@@ -18,11 +17,6 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    peerDepsExternal(),
-    resolve({
-      browser: true,
-      dedupe: ['react', 'react-dom'],
-    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify('development'),
       preventAssignment: true,

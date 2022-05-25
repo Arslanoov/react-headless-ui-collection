@@ -130,7 +130,7 @@ const App = () => {
       <Checkbox onChange={setIsChecked} checked={isChecked} name="some" />
 
       <h3>Radio</h3>
-      <Radio name="test" value={radioValue} onChange={setRadioValue}>
+      <Radio name="test" value={radioValue} onChange={(value) => setRadioValue(value as number)}>
         <Radio.Item value={1}>Label 1</Radio.Item>
         <Radio.Item value={2}>Label 2</Radio.Item>
         <Radio.Item value={3} disabled>
