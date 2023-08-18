@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    <a href="https://arslanoov.github.io/react-collection-ui/">Documentation (Storybook)</a>
+    <a href="https://arslanoov.github.io/react-headless-ui-collection/?path=/story/introduction--page">Documentation (Storybook)</a>
 </p>
 
 <p align="center">
