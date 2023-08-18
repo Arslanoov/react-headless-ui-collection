@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    Collection of 13 React UI components, built in TypeScript & covered by tests
+    Collection of 13 React Headless UI components, built in TypeScript & covered by tests
 </p>
 
 <p align="center">
